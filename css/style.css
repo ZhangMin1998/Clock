@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #333;
+}
+
+.wrapper.dwo {
+    display: -webkit-box;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.clock {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 24fr 4fr 24fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0;
+}
+
+.points {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+}
+
+.point {
+    position: relative;
+}
+
+.point:nth-child(2)::before,
+.point:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 50%;
+    padding-top: 50%;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right bottom,
+        from(#fff),
+        color-stop(50%, #fff),
+        color-stop(50%, #333),
+        to(#333)
+    );
+    background: linear-gradient(
+        to bottom right,
+        #fff 0%,
+        #fff 50%,
+        #333 50%,
+        #333 100%
+    );
+}
+
+.clock__number {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0;
+}
+
+.digit {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.pixel {
+    padding-top: 100%;
+    background: #333;
+}
+
+.pixel__active {
+    background: #595959;
+}
+
+.digit__0 .pixel_1,
+.digit__0 .pixel_2,
+.digit__0 .pixel_3,
+.digit__0 .pixel_4,
+.digit__0 .pixel_6,
+.digit__0 .pixel_7,
+.digit__0 .pixel_9,
+.digit__0 .pixel_10,
+.digit__0 .pixel_12,
+.digit__0 .pixel_13,
+.digit__0 .pixel_14,
+.digit__0 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__0 .pixel_1.pixel__active,
+.digit__0 .pixel_2.pixel__active,
+.digit__0 .pixel_3.pixel__active,
+.digit__0 .pixel_4.pixel__active,
+.digit__0 .pixel_6.pixel__active,
+.digit__0 .pixel_7.pixel__active,
+.digit__0 .pixel_9.pixel__active,
+.digit__0 .pixel_10.pixel__active,
+.digit__0 .pixel_12.pixel__active,
+.digit__0 .pixel_13.pixel__active,
+.digit__0 .pixel_14.pixel__active,
+.digit__0 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__1 .pixel_1,
+.digit__1 .pixel_2,
+.digit__1 .pixel_5,
+.digit__1 .pixel_8,
+.digit__1 .pixel_11,
+.digit__1 .pixel_13,
+.digit__1 .pixel_14,
+.digit__1 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__1 .pixel_1.pixel__active,
+.digit__1 .pixel_2.pixel__active,
+.digit__1 .pixel_5.pixel__active,
+.digit__1 .pixel_8.pixel__active,
+.digit__1 .pixel_11.pixel__active,
+.digit__1 .pixel_13.pixel__active,
+.digit__1 .pixel_14.pixel__active,
+.digit__1 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__2 .pixel_1,
+.digit__2 .pixel_2,
+.digit__2 .pixel_3,
+.digit__2 .pixel_6,
+.digit__2 .pixel_7,
+.digit__2 .pixel_8,
+.digit__2 .pixel_9,
+.digit__2 .pixel_10,
+.digit__2 .pixel_13,
+.digit__2 .pixel_14,
+.digit__2 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__2 .pixel_1.pixel__active,
+.digit__2 .pixel_2.pixel__active,
+.digit__2 .pixel_3.pixel__active,
+.digit__2 .pixel_6.pixel__active,
+.digit__2 .pixel_7.pixel__active,
+.digit__2 .pixel_8.pixel__active,
+.digit__2 .pixel_9.pixel__active,
+.digit__2 .pixel_10.pixel__active,
+.digit__2 .pixel_13.pixel__active,
+.digit__2 .pixel_14.pixel__active,
+.digit__2 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__3 .pixel_1,
+.digit__3 .pixel_2,
+.digit__3 .pixel_3,
+.digit__3 .pixel_6,
+.digit__3 .pixel_7,
+.digit__3 .pixel_8,
+.digit__3 .pixel_9,
+.digit__3 .pixel_12,
+.digit__3 .pixel_13,
+.digit__3 .pixel_14,
+.digit__3 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__3 .pixel_1.pixel__active,
+.digit__3 .pixel_2.pixel__active,
+.digit__3 .pixel_3.pixel__active,
+.digit__3 .pixel_6.pixel__active,
+.digit__3 .pixel_7.pixel__active,
+.digit__3 .pixel_8.pixel__active,
+.digit__3 .pixel_9.pixel__active,
+.digit__3 .pixel_12.pixel__active,
+.digit__3 .pixel_13.pixel__active,
+.digit__3 .pixel_14.pixel__active,
+.digit__3 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__4 .pixel_1,
+.digit__4 .pixel_3,
+.digit__4 .pixel_4,
+.digit__4 .pixel_6,
+.digit__4 .pixel_7,
+.digit__4 .pixel_8,
+.digit__4 .pixel_9,
+.digit__4 .pixel_12,
+.digit__4 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__4 .pixel_1.pixel__active,
+.digit__4 .pixel_3.pixel__active,
+.digit__4 .pixel_4.pixel__active,
+.digit__4 .pixel_6.pixel__active,
+.digit__4 .pixel_7.pixel__active,
+.digit__4 .pixel_8.pixel__active,
+.digit__4 .pixel_9.pixel__active,
+.digit__4 .pixel_12.pixel__active,
+.digit__4 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__5 .pixel_1,
+.digit__5 .pixel_2,
+.digit__5 .pixel_3,
+.digit__5 .pixel_4,
+.digit__5 .pixel_7,
+.digit__5 .pixel_8,
+.digit__5 .pixel_9,
+.digit__5 .pixel_12,
+.digit__5 .pixel_13,
+.digit__5 .pixel_14,
+.digit__5 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__5 .pixel_1.pixel__active,
+.digit__5 .pixel_2.pixel__active,
+.digit__5 .pixel_3.pixel__active,
+.digit__5 .pixel_4.pixel__active,
+.digit__5 .pixel_7.pixel__active,
+.digit__5 .pixel_8.pixel__active,
+.digit__5 .pixel_9.pixel__active,
+.digit__5 .pixel_12.pixel__active,
+.digit__5 .pixel_13.pixel__active,
+.digit__5 .pixel_14.pixel__active,
+.digit__5 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__6 .pixel_1,
+.digit__6 .pixel_2,
+.digit__6 .pixel_3,
+.digit__6 .pixel_4,
+.digit__6 .pixel_7,
+.digit__6 .pixel_8,
+.digit__6 .pixel_9,
+.digit__6 .pixel_10,
+.digit__6 .pixel_12,
+.digit__6 .pixel_13,
+.digit__6 .pixel_14,
+.digit__6 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__6 .pixel_1.pixel__active,
+.digit__6 .pixel_2.pixel__active,
+.digit__6 .pixel_3.pixel__active,
+.digit__6 .pixel_4.pixel__active,
+.digit__6 .pixel_7.pixel__active,
+.digit__6 .pixel_8.pixel__active,
+.digit__6 .pixel_9.pixel__active,
+.digit__6 .pixel_10.pixel__active,
+.digit__6 .pixel_12.pixel__active,
+.digit__6 .pixel_13.pixel__active,
+.digit__6 .pixel_14.pixel__active,
+.digit__6 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__7 .pixel_1,
+.digit__7 .pixel_2,
+.digit__7 .pixel_3,
+.digit__7 .pixel_6,
+.digit__7 .pixel_9,
+.digit__7 .pixel_12,
+.digit__7 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__7 .pixel_1.pixel__active,
+.digit__7 .pixel_2.pixel__active,
+.digit__7 .pixel_3.pixel__active,
+.digit__7 .pixel_6.pixel__active,
+.digit__7 .pixel_9.pixel__active,
+.digit__7 .pixel_12.pixel__active,
+.digit__7 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__8 .pixel_1,
+.digit__8 .pixel_2,
+.digit__8 .pixel_3,
+.digit__8 .pixel_4,
+.digit__8 .pixel_6,
+.digit__8 .pixel_7,
+.digit__8 .pixel_8,
+.digit__8 .pixel_9,
+.digit__8 .pixel_10,
+.digit__8 .pixel_12,
+.digit__8 .pixel_13,
+.digit__8 .pixel_14,
+.digit__8 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__8 .pixel_1.pixel__active,
+.digit__8 .pixel_2.pixel__active,
+.digit__8 .pixel_3.pixel__active,
+.digit__8 .pixel_4.pixel__active,
+.digit__8 .pixel_6.pixel__active,
+.digit__8 .pixel_7.pixel__active,
+.digit__8 .pixel_8.pixel__active,
+.digit__8 .pixel_9.pixel__active,
+.digit__8 .pixel_10.pixel__active,
+.digit__8 .pixel_12.pixel__active,
+.digit__8 .pixel_13.pixel__active,
+.digit__8 .pixel_14.pixel__active,
+.digit__8 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
+
+.digit__9 .pixel_1,
+.digit__9 .pixel_2,
+.digit__9 .pixel_3,
+.digit__9 .pixel_4,
+.digit__9 .pixel_6,
+.digit__9 .pixel_7,
+.digit__9 .pixel_8,
+.digit__9 .pixel_9,
+.digit__9 .pixel_12,
+.digit__9 .pixel_13,
+.digit__9 .pixel_14,
+.digit__9 .pixel_15 {
+    background: #fdfb42;
+}
+.digit__9 .pixel_1.pixel__active,
+.digit__9 .pixel_2.pixel__active,
+.digit__9 .pixel_3.pixel__active,
+.digit__9 .pixel_4.pixel__active,
+.digit__9 .pixel_6.pixel__active,
+.digit__9 .pixel_7.pixel__active,
+.digit__9 .pixel_8.pixel__active,
+.digit__9 .pixel_9.pixel__active,
+.digit__9 .pixel_12.pixel__active,
+.digit__9 .pixel_13.pixel__active,
+.digit__9 .pixel_14.pixel__active,
+.digit__9 .pixel_15.pixel__active {
+    background: #98fcfc;
+}
